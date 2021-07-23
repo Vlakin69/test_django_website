@@ -16,5 +16,3 @@ class Customers(models.Model):
         verbose_name_plural = 'Customers'
 
 
-class DemoVideo(models.Model):
-    video = models.FileField(upload_to="videos")
