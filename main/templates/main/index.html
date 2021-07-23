@@ -1,0 +1,242 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Funny Company</title>
+</head>
+
+<body>
+	<div class="container">
+		<header class="header">
+			<div class="container">
+				<nav>
+					<div class="nav_logo">
+						<img src="{% static 'main/img/logo.png' %}" class="logo" id="top">
+					</div>
+					<div class="nav_text" id="myNav_text">
+						<a href="#ourslaves" class="underline nav_link" >OUR SLAVES</a>
+						<a href="#showcase" class="underline nav_link">SHOWCASE</a>
+						<a href="#dontcontact" class="underline nav_link">DO NOT CONTACT US</a>
+						<a href="#" id="menu" class="icon">&#9776;</a>
+					</div>
+				</nav>
+				<div class="header_inner">
+					<div class="header_title">
+						<h1>Hello!!!<br>We Are Sold<br>
+						Some Slaves.</h1>
+						<h3>Slaves who will do any work.</h3>
+						<a href="#dontcontact" class="nav_link"><button  class="btn_send_message" >SEND MESSAGE</button></a>
+
+					</div>
+					<div class="header_photo">
+						<img src="{% static 'main/img/vsi.png' %}" class="css-adaptive" >
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="container">
+			<div class="all">
+			<h1 id="ourslaves">CHOICE OUR SLAVES!</h1>
+			<input checked type="radio" name="respond" id="desktop">
+			<article id="slider">
+				<input checked type="radio" name="slider" id="switch1">
+				<input type="radio" name="slider" id="switch2">
+				<input type="radio" name="slider" id="switch3">
+				<input type="radio" name="slider" id="switch4">
+				<div id="slides">
+					<div id="overflow">
+						<div class="image">
+							<article><video autoplay muted loop><source src="{% static 'main/video/1.mp4' %}" type="video/mp4"></video></article>
+							<article><video autoplay muted loop><source src="{% static 'main/video/2.mp4' %}" type="video/mp4"></video></article>
+							<article><video autoplay muted loop><source src="{% static 'main/video/3.mp4' %}" type="video/mp4"></video></article>
+							<article><video autoplay muted loop><source src="{% static 'main/video/4.mp4' %}" type="video/mp4"></video></article>
+						</div>
+					</div>
+				</div>
+				<div id="controls">
+					<label for="switch1"></label>
+					<label for="switch2"></label>
+					<label for="switch3"></label>
+					<label for="switch4"></label>
+
+				</div>
+				<div id="active">
+					<label for="switch1"></label>
+					<label for="switch2"></label>
+					<label for="switch3"></label>
+					<label for="switch4"></label>
+
+				</div>
+			</article>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="showcase">
+				<div class="showcase_title">
+					<h1 id="showcase">SLAVES SHOWCASE.</h1>
+				</div>
+				<div class="showcase_photos">
+					<div class="showcase_photo_1">
+						<img src="{% static 'main/img/nazar.jpg' %}">
+						<div class="hover_fill">
+							<div class="hover_text">
+								<h1>SLAVE</h1>
+								<p>300$</p>
+							</div>
+						</div>
+					</div>
+					<div class="showcase_photo_2">
+						<img src="{% static 'main/img/nimets.jpg' %}">
+						<div class="hover_fill">
+							<div class="hover_text">
+								<h1>SLAVE</h1>
+								<p>300$</p>
+							</div>
+						</div>
+					</div>
+					<div class="showcase_photo_3">
+						<img src="{% static 'main/img/vlad.jpg' %}">
+						<div class="hover_fill">
+							<div class="hover_text">
+								<h1>SLAVE</h1>
+								<p>1000$</p>
+							</div>
+						</div>
+					</div>
+					<div class="showcase_photo_4">
+						<img src="{% static 'main/img/garm.jpg' %}">
+						<div class="hover_fill">
+							<div class="hover_text">
+								<h1>SLAVE</h1>
+								<p>300$</p>
+							</div>
+						</div>
+					</div>
+					<div class="showcase_photo_5">
+						<img src="{% static 'main/img/staruy.jpg' %}">
+						<div class="hover_fill">
+							<div class="hover_text">
+								<h1>SLAVE</h1>
+								<p>300$</p>
+							</div>
+						</div>
+					</div>
+					<div class="showcase_photo_6">
+						<img src="{% static 'main/img/ilia.jpg' %}">
+						<div class="hover_fill">
+							<div class="hover_text">
+								<h1>SLAVE</h1>
+								<p>300$</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="contact_us">
+				<div class="contact_title">
+					<h1 id="dontcontact">CONTACT US.</h1>
+					<p>We will send you two fat cook and seemen if you buy two slaves!</p>
+				</div>
+				<div class="contact_content">
+					<div class="contact_left">
+						<h1>Send Us Message.</h1>
+						<form action="#" name="newform" method="post">
+                            {% csrf_token %}
+                            {{ form.Name }}
+                            {{ form.Email }}
+                            {{ form.Message}}
+                            <span>{{ error }}</span>
+							<input type="submit" value="SEND MESSAGE" >
+						</form>
+					</div>
+					<div class="contact_right">
+						<img src="{% static 'main/img/photo.jpg' %}" class="css-adaptive" alt="">
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="cards_container">
+				<div class="cards">
+					<div class="card">
+						<img src="{% static 'main/img/adresa.png' %}" alt="">
+						<p>12 Bandera street,<br>Lviv, Ukraine, 79013</p>
+					</div>
+					<div class="card">
+						<img src="{% static 'main/img/phone.png' %}" alt="">
+						<p>+067-280-0555<br>+067-280-0555</p>
+					</div>
+					<div class="card">
+						<img src="{% static 'main/img/email.png' %}" alt="">
+						<p>nazar.b.kozak@lpnu.ua</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="link_container">
+				<div class="link">
+					<a href="https://www.facebook.com/olga.rybytska"><img src="{% static 'main/img/fb.png' %}" alt=""></a>
+					<a href="https://twitter.com/elonmusk"><img src="{% static 'main/img/twitter.png' %}" alt=""></a>
+					<a href="https://vk.com/kri.stinka?z=photo32607501_456239169%2Fwall32607501_2491"><img src="{% static 'main/img/ball.png' %}" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer_all">
+				<div class="footer_logo">
+					<img src="{% static 'main/img/LogoFooter.png' %}">
+					<p>© 2020 - Funny Company, All Right Reserved</p>
+				</div>
+				<div class="footer_back">
+					<a href="#top" class="nav_link">BACK TO TOP </a>
+					<a href="#top" class="nav_link"><i class="arrow up"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("a.nav_link").click(function(){
+				$("html, body").animate({
+					scrollTop: $($(this).attr("href")).offset().top + "px"
+				}, {
+					duration: 1000,
+					easing: "swing"
+				});
+				return false;
+			});
+		});
+		menu.onclick = function myFunction () {
+			var x = document.getElementById('myNav_text');
+
+			if (x.className === "nav_text"){
+				x.className += " responsive";
+			} else {
+				x.className = "nav_text"
+			}
+		}
+	</script>
+</body>
+</html>
